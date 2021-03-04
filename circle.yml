@@ -6,4 +6,4 @@ deployment:
   staging:
     branch: main
     heroku: 
-      appname: secure-chamber-41971
+      appname: lab06cvds
