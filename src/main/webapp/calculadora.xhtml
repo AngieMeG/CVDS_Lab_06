@@ -36,7 +36,7 @@
 		<p:commandButton value="Calculate Mode" update="calculadora_form" actionListener="#{calculadoraBean.calculateMode(calculadoraBean.values)}"/>
 		<h:outputText value="Mode: #{calculadoraBean.mode}"/>
 	
-		<p:commandButton value="Calculate Variance" update="calculadora_form" actionListener="#{calculadoraBean.calculateVariance(calculadoraBean.vales)}"/>
+		<p:commandButton value="Calculate Variance" update="calculadora_form" actionListener="#{calculadoraBean.calculateVariance(calculadoraBean.values)}"/>
 		<h:outputText value="Variance: #{calculadoraBean.variance}"/>
 	
 		<p:commandButton value="Calculate Standard Deviation" update="calculadora_form" actionListener="#{calculadoraBean.calculateStandardDeviation(calculadoraBean.values)}"/>
@@ -47,6 +47,13 @@
 
 		<p:commandButton styleClass="buttonRestart" value="restart" update="calculadora_form" actionListener="#{calculadoraBean.restart()}"/>
 	</h:panelGrid>
+	<div class="card">
+        	<p:dataTable var="values" value="#{calculadoraBean.backup}" scrollable="true">
+	    		<p:column headerText="History">
+               	 		<h:outputText value="#{calculadoraBean.passing(values)}"/>
+           		</p:column>
+        	</p:dataTable>
+    	</div>
 </h:form>
 </h:body>  
 </html>  
