@@ -1,11 +1,9 @@
 package edu.eci.cvds.servlet;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import javax.servlet.ServletException;

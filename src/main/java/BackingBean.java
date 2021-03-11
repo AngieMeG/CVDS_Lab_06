@@ -1,5 +1,3 @@
-import java.lang.Math;
-import java.lang.String;
 import java.util.Arrays;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
@@ -46,7 +44,8 @@ public class BackingBean{
 	}
 
 	public double calculateVariance(double values[]){
-		double backUpMean = mean, backUpDeviation = standardDeviation;
+		double backUpMean = mean;
+		double backUpDeviation = standardDeviation;
 		variance = Math.sqrt(calculateStandardDeviation(values));
 		mean = backUpMean;
 		standardDeviation = backUpDeviation;
@@ -56,7 +55,8 @@ public class BackingBean{
 	public double calculateMode(double values[]){		
 		Arrays.sort(values);
 		mode = values[0];
-		int maxCounter = 1, counter = 1;
+		int maxCounter = 1;
+		int counter = 1;
 		for(int i=1; i<values.length; i++){
 			if (values[i] == values[i-1]){
 				counter += 1;
